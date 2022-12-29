@@ -34,7 +34,7 @@ INSERT INTO ensemble_instrument (instrument_id, ensemble_id) VALUES (1, 1);
 
 INSERT INTO group_lesson (group_lesson_id, booked_lesson_id) values (1, 1);
 
-INSERT INTO  group_lesson_instrument (instrument_id, group_lesson_id) VALUES ('1', 1);
+INSERT INTO group_lesson_instrument (instrument_id, group_lesson_id) VALUES ('1', 1);
 
 INSERT INTO individual_lesson (individual_lesson_id, booked_lesson_id, instrument_id) values (1, 1, '1');
 
