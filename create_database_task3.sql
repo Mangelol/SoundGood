@@ -177,6 +177,7 @@ DROP TABLE IF EXISTS "group_lesson";
 CREATE TABLE "group_lesson" (
 	"group_lesson_id" integer NOT NULL,
 	"booked_lesson_id" integer NOT NULL,
+	"date" timestamp(6),
 	CONSTRAINT "pk_group_lesson" PRIMARY KEY ("group_lesson_id"),
 	CONSTRAINT "fk_group_lesson_0" FOREIGN KEY (booked_lesson_id) REFERENCES booked_lesson(booked_lesson_id) NOT DEFERRABLE
 );
@@ -198,6 +199,7 @@ DROP TABLE IF EXISTS "individual_lesson";
 CREATE TABLE "individual_lesson" (
 	"individual_lesson_id" integer NOT NULL,
     "booked_lesson_id" integer NOT NULL,
+	"date" timestamp(6),
 	"instrument_id" character varying(50) NOT NULL,
 	CONSTRAINT "pk_individual_lesson" PRIMARY KEY ("individual_lesson_id"),
 	CONSTRAINT "fk_individual_lesson_0" FOREIGN KEY (instrument_id) REFERENCES instrument(instrument_id) NOT DEFERRABLE,

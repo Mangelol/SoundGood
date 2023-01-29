@@ -79,16 +79,14 @@ INSERT INTO booked_lesson (booked_lesson_id, maximum_enrollments, minimum_enroll
 (8, 10, 1, '2022-12-18 21:46:00', 2, 1, 2),
 (9, 10, 1, '2022-12-19 21:46:00', 1, 1, 1),
 (10, 10, 1, '2022-12-20 21:46:00', 4, 1, 2),
-(11, 10, 1, '2022-12-21 21:46:00', 3, 1, 1),
-(12, 10, 1, '2022-12-22 21:46:00', 2, 1, 2),
-(13, 10, 1, '2022-12-23 21:46:00', 1, 1, 1);
+(11, 10, 1, '2022-12-21 21:46:00', 3, 1, 1);
 
 INSERT INTO ensemble (ensemble_id, booked_lesson_id, maximum_enrollments, minimum_enrollments, current_enrollments, date, genre) values 
 (1, 1, 10, 1, 5, '2022-11-11 21:46:00', 'classic'),
-(2, 2, 10, 1, 9, '2023-01-02 10:00:00','rock'),
-(3, 3, 10, 1, 10, '2023-01-04 10:00:00', 'jazz'),
-(4, 4, 10, 1, 7, '2023-01-07 10:00:00', 'rock'),
-(5, 5, 10, 1, 8, '2023-01-08 10:00:00', 'classic');
+(2, 2, 10, 1, 9, '2022-12-12 21:46:00','rock'),
+(3, 3, 10, 1, 10, '2022-12-13 21:46:00', 'jazz'),
+(4, 4, 10, 1, 7, '2022-12-14 21:46:00', 'rock'),
+(5, 5, 10, 1, 8, '2022-12-15 21:46:00', 'classic');
 
 INSERT INTO ensemble_instrument (instrument_id, ensemble_id) VALUES 
 ('guitar', 1),
@@ -97,12 +95,12 @@ INSERT INTO ensemble_instrument (instrument_id, ensemble_id) VALUES
 ('drums', 4),
 ('violin', 5);
 
-INSERT INTO group_lesson (group_lesson_id, booked_lesson_id) values 
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5);
+INSERT INTO group_lesson (group_lesson_id, booked_lesson_id, date) values 
+(1, 6, '2022-12-16 21:46:00'),
+(2, 7, '2022-12-17 21:46:00'),
+(3, 8, '2022-12-18 21:46:00'),
+(4, 9, '2022-12-19 21:46:00'),
+(5, 10, '2022-12-20 21:46:00');
 
 INSERT INTO group_lesson_instrument (instrument_id, group_lesson_id) VALUES 
 ('guitar', 1),
@@ -111,7 +109,7 @@ INSERT INTO group_lesson_instrument (instrument_id, group_lesson_id) VALUES
 ('drums', 4),
 ('violin', 5);
 
-INSERT INTO individual_lesson (individual_lesson_id, booked_lesson_id, instrument_id) values (1, 1, 'guitar');
+INSERT INTO individual_lesson (individual_lesson_id, booked_lesson_id, date, instrument_id) values (1, 11, '2022-12-21 21:46:00', 'guitar');
 
 INSERT INTO instructor_available_time_slot (instructor_id, available_time_slot_id) VALUES (1, '1');
 

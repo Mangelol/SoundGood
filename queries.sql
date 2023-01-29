@@ -5,23 +5,25 @@ from booked_lesson
 WHERE extract(year from date) = 2022
 group by month
 
-SELECT count(ensemble_id) as ensembles, extract(month from date) as month
+SELECT count(ensemble_id) as ensembles, extract(month from ensemble.date) as month
 from ensemble, booked_lesson
 where ensemble.booked_lesson_id = booked_lesson.booked_lesson_id
-AND extract(year from date) = 2022
+AND extract(year from ensemble.date) = 2022
 group by month
 
-SELECT count(group_lesson_id) as group_lessons, extract(month from date) as month
-from group_lessob, booked_lesson
+SELECT count(group_lesson.group_lesson_id) as group_lessons, extract(month from group_lesson.date) as month
+from group_lesson, booked_lesson
 where group_lesson.booked_lesson_id = booked_lesson.booked_lesson_id
-AND extract(year from date) = 2022
+AND extract(year from group_lesson.date) = 2022
 group by month
 
-SELECT count(individual_lesson_id) as individual_lessons, extract(month from date)
-from individual_lesson, booked_lesson
-where individual_lesson.booked_lesson_id = booked_lesson.booked_lesson_id
-AND extract(year from date) = 2022
-group by month
+
+SELECT count(individual_lesson.individual_lesson_id) as individual_lessons, extract(month from individual_lesson.date) as month
+FROM individual_lesson
+JOIN booked_lesson ON individual_lesson.booked_lesson_id = booked_lesson.booked_lesson_id
+WHERE extract(year from individual_lesson.date) = 2022
+GROUP BY month
+
 
 --#2--
 SELECT COUNT(DISTINCT s.student_id) as num_students,
